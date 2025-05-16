@@ -36,5 +36,11 @@ class DatabaseSeeder extends Seeder
         Cita::factory(10)->has(
             Anotacion::factory()
         )->create();
+
+        $this->call([
+            RolesSeeder::class,
+            UsersWithRolesSeeder::class,
+            // otros seeders...
+        ]);
     }
 }

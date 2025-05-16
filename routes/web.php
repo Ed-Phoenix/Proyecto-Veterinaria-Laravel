@@ -17,6 +17,22 @@ Route::middleware(['auth'])->group(function () {
     Volt::route('settings/profile', 'settings.profile')->name('settings.profile');
     Volt::route('settings/password', 'settings.password')->name('settings.password');
     Volt::route('settings/appearance', 'settings.appearance')->name('settings.appearance');
-});
+}); 
+
+        Route::middleware(['role:admin'])->group(function () {
+        // Rutas solo para administradores
+        });
+
+        Route::middleware(['role:persona'])->group(function () {
+            // Rutas para personas normales
+        });
+
+        Route::middleware(['role:veterinario'])->group(function () {
+            // Rutas para veterinarios
+        });
+
+        Route::middleware(['role:admin|veterinario'])->group(function () {
+        // Acceso compartido entre admin y veterinarios
+        });
 
 require __DIR__.'/auth.php';
