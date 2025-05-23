@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use Livewire\Volt\Volt;
+use App\Livewire\Mascotas\MascotaIndex;
 
 Route::get('/', function () {
     return view('welcome');
@@ -34,5 +35,9 @@ Route::middleware(['auth'])->group(function () {
         Route::middleware(['role:admin|veterinario'])->group(function () {
         // Acceso compartido entre admin y veterinarios
         });
+
+Route::middleware(['auth', 'role:persona'])->group(function () {
+    Route::get('/mascotas', MascotaIndex::class)->name('mascotas.index');
+});
 
 require __DIR__.'/auth.php';
