@@ -1,61 +1,56 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# 🐾 Veterinaria WebApp
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+Aplicación web desarrollada con **Laravel 12**, **Livewire**, **TailwindCSS**, diseñada para gestionar una clínica veterinaria, con funcionalidades para **usuarios**, **veterinarios** y **administradores**.
 
-## About Laravel
+![Banner Veterinaria](https://placehold.co/1200x400?text=Veterinaria+WebApp+%7C+Laravel+12+Project)
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+---
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## 🚀 Características principales
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+### 👤 Usuarios (Personas)
+- Registro e inicio de sesión.
+- CRUD de mascotas (nombre, edad, especie, raza, sexo).
+- Agenda de citas:
+  - Selección de mascota, veterinario y horario disponible.
+  - Horarios mostrados como cuadrícula (solo disponibles).
+- Tienda online:
+  - Catálogo de productos en cards (imagen, descripción, precio).
+  - Carrito de compras con integración a PayPal.
+- Notificación por correo al veterinario al agendar una cita.
 
-## Learning Laravel
+### 🩺 Veterinarios
+- Creados por el administrador.
+- Definición de horarios de disponibilidad.
+- Panel de citas solicitadas y confirmadas.
+- Confirmación y seguimiento de citas.
+- Registro de anotaciones clínicas y generación de reportes en PDF.
+- Acceso al catálogo de productos.
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+### 🛠️ Administrador
+- CRUD de veterinarios.
+- CRUD de productos en venta.
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+---
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+## 🧩 Estructura del Proyecto
 
-## Laravel Sponsors
+- **Laravel 12**: Framework backend.
+- **Livewire**: Componentes dinámicos sin JavaScript.
+- **Tailwind CSS**: Estilizado rápido y moderno.
+- **MySQL**: Base de datos relacional.
+- **PayPal API**: Pasarela de pagos.
+- **DomPDF**: Generación de reportes en PDF.
+- **Mail**: Envío de notificaciones por correo electrónico.
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+---
 
-### Premium Partners
+## 🗃️ CRUDs implementados
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
-
-## Contributing
-
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
-
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+| Módulo       | Responsable       | Tecnología    |
+|--------------|-------------------|---------------|
+| Usuarios     | Laravel Breeze    | Built-in      |
+| Mascotas     | Persona           | Livewire      |
+| Citas        | Persona/Veterinario | Livewire   |
+| Horarios     | Veterinario       | Livewire      |
+| Veterinarios | Administrador     | Livewire      |
